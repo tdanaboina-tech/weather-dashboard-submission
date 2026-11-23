@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Weather Dashboard</h1>
+      <p>Real-time weather metrics powered by Open-Meteo REST API</p>
+    </header>
+
+    <form id="search-form" class="search-bar" aria-label="Search weather by city">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Enter city name (e.g., Hyderabad, London, Tokyo)..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+
+    <div id="status-message" class="status-message hidden" role="alert"></div>
+
+    <section id="weather-card" class="weather-card hidden" aria-live="polite">
+      <div class="location-info">
+        <h2 id="city-name">--</h2>
+        <span id="weather-condition" class="badge">--</span>
+      </div>
+
+      <div class="primary-temp">
+        <span id="temperature">--</span><span class="unit">°C</span>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-label">Humidity</span>
+          <span id="humidity" class="metric-value">--%</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">Wind Speed</span>
+          <span id="wind-speed" class="metric-value">-- km/h</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">Feels Like</span>
+          <span id="apparent-temp" class="metric-value">--°C</span>
+        </div>
+      </div>
+
+      <p id="last-updated" class="timestamp">Last updated: --</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
